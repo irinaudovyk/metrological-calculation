@@ -1,0 +1,66 @@
+<div class="row" *ngIf="data && data.length">
+    <div class="col-md-12">
+        <h2 class="text-center">{{title}}</h2>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-md-12">
+        <div class="table-responsive">
+            <table class="table table-condensed table-striped table-bordered table-hover no-margin">
+                <thead>
+                <tr>
+                    <th colspan="5">Показання спідометра, км/год</th>
+                </tr>
+                <tr>
+                    <th rowspan="2"
+                        style="vertical-align: middle;text-align: center;">Вимірюване значення, км/год</th>
+                    <th colspan="2">Прямий хід</th>
+                    <th colspan="2">Зворотній хід</th>
+                </tr>
+                <tr>
+                    <th>I</th>
+                    <th>II</th>
+                    <th>I</th>
+                    <th>II</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let item of data">
+                    <td>
+                        <span class="name">{{item.point}}</span>
+                    </td>
+                    <td class="hidden-phone">
+                        <input type="text"
+                               [(ngModel)]="item.directFirst"
+                               name="directFirst"
+                               autocomplete="off"></td>
+                    <td class="hidden-phone">
+                        <input type="text"
+                               [(ngModel)]="item.directSecond"
+                               name="directSecond"
+                               autocomplete="off">
+                    </td>
+                    <td class="hidden-phone">
+                        <input type="text"
+                               [(ngModel)]="item.reverseFirst"
+                               name="reverseFirst"
+                               autocomplete="off"></td>
+                    <td class="hidden-phone">
+                        <input type="text"
+                               [(ngModel)]="item.reverseSecond"
+                               name="reverseSecond"
+                               autocomplete="off">
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+<button (click)="clean()" class="btn btn-info">Очистити дані</button>
+<button (click)="count()" class="btn btn-success">Обробка</button>
+
+<!--<app-direct-result [data]="data"></app-direct-result>-->

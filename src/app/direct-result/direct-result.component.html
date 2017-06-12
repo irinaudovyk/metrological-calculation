@@ -1,0 +1,87 @@
+<div class="row" >
+    <div class="col-md-12">
+        <div class="table-responsive"  id="direct"  style="background-color: white">
+            <table class="table table-condensed table-striped table-bordered table-hover no-margin">
+                <thead>
+                <tr>
+                    <th rowspan="4" style="width: 10%;vertical-align: middle;text-align: center;">Виміряне значення швидкості, Xcp, км/год</th>
+                    <th colspan="11">Прямий хід</th>
+                </tr>
+                <tr>
+                    <th rowspan="2" colspan="2" style="vertical-align: middle;text-align: center;">Покази спідометра, Xpoб, км/год</th>
+                    <th rowspan="2" style="vertical-align: middle;text-align: center;">Суреднє значення, км/год</th>
+                    <th rowspan="2" style="vertical-align: middle;text-align: center;">СКВ, км/год</th>
+                    <th rowspan="2" style="vertical-align: middle;text-align: center;">Межі випадкової похибки, км/год</th>
+                    <th colspan="2" >Абсолютна похибка, км/год</th>
+                    <th colspan="2">Відносна похибка, %</th>
+                    <th colspan="2">Зведена похибка, %</th>
+                </tr>
+                 <tr>
+                    <th colspan="2">
+                        <img src="src/app/image/delta.png" style="width: 150px; height: auto;" >
+                    </th>
+                    <th colspan="2">
+                        <img src="src/app/image/deltaRel.png" style="width: 160px; height: auto;" >
+                    </th>
+                    <th colspan="2"><img src="src/app/image/deltaRelSum.png" style="width: 160px; height: auto;" ></th>
+                </tr>
+                <tr>
+                    <th colspan="1">І</th>
+                    <th colspan="1">ІІ</th>
+                    <th colspan="1"> <img src="src/app/image/xcp.png" style="width: 90px; height: auto;" ></th>
+                    <th colspan="1"><img src="src/app/image/sigma.png" style="width: 200px; height: auto;" ></th>
+                    <th colspan="1"><img src="src/app/image/epsilon.png" style="width: 120px; height: auto;" ></th>
+                    <th colspan="1">І</th>
+                    <th colspan="1">ІІ</th>
+                    <th colspan="1">І</th>
+                    <th colspan="1">ІІ</th>
+                    <th colspan="1">І</th>
+                    <th colspan="1">ІІ</th>
+                </tr>
+                </thead>
+                <tbody >
+                <tr *ngFor="let item of data">
+                    <td *ngIf="item.XCP">
+                        <span class="name">{{item.point}}</span>
+                    </td>
+                    <td *ngIf="item.XCP">
+                        <span class="name">{{item.directFirst}}</span>
+                    </td>
+                    <td *ngIf="item.XCP">
+                        <span class="name">{{item.directSecond}}</span>
+                    </td>
+                    <td *ngIf="item.XCP">
+                        <span class="name">{{item.XCP}}</span>
+                    </td>
+                    <td *ngIf="item.XCP">
+                        <span class="name">{{item.sigma}}</span>
+                    </td>
+                    <td *ngIf="item.XCP">
+                        <span class="name">{{item.epsilon}}</span>
+                    </td>
+                    <td *ngIf="item.XCP">
+                        <span class="name">&#8723; {{item.deltaFirst}}</span>
+                    </td>
+                    <td *ngIf="item.XCP" >
+                        <span class="name">&#8723; {{item.deltaSecond}}</span>
+                    </td>
+                    <td *ngIf="item.XCP">
+                        <span class="name">&#8723; {{item.relativeDeltaFirst}}</span>
+                    </td>
+                    <td *ngIf="item.XCP">
+                        <span class="name">&#8723; {{item.relativeDeltaSecond}}</span>
+                    </td>
+                    <td *ngIf="item.XCP">
+                        <span class="name">&#8723; {{item.relativeDeltaSumFirst}}</span>
+                    </td>
+                    <td *ngIf="item.XCP">
+                        <span class="name">&#8723; {{item.relativeDeltaSumSecond}}</span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <button (click)="downloadDirect()" class="btn btn-success">Зберегти результати прямого ходу</button>
+    </div>
+</div>
+

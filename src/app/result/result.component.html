@@ -1,0 +1,19 @@
+<div class="row" style="background-color: white">
+    <div class="col-md-12">
+        <button class="btn btn-info pull-left" [routerLink]="['app/input']">Назад</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <h2 class="text-center">Результати</h2>
+    </div>
+</div>
+<br>
+<div id="pdf" style="background-color: white;">
+    <app-direct-result></app-direct-result>
+    <!--<br>-->
+    <app-reverse-result></app-reverse-result>
+</div>
+
+<button (click)="download()" class="btn btn-success">download </button>
+
