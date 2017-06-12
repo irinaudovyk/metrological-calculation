@@ -16,8 +16,8 @@
     "start": "http-server dist/"
   },
   "engines": {
-    "node": "6.9.2",
-    "npm": "3.10.9"
+    "node": "6.9.4",
+    "npm": "3.10.10"
   },
   "private": true,
   "dependencies": {
