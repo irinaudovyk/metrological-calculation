@@ -20,7 +20,6 @@ export class InputDataComponent implements OnInit {
 
     ngOnInit() {
         if (this.dataService.data$.getValue()) {
-            console.log('this.dataService.data$.getValue()', this.dataService.data$.getValue());
             return this.data = this.dataService.data$.getValue();
         }
         this.init();
