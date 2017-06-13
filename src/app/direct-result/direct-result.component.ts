@@ -19,7 +19,7 @@ export class DirectResultComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.data.forEach((item) => {
+        this.data && this.data.forEach((item) => {
             this.countXCP(item);
             this.countSigma(item);
             this.countEpsilon(item);
@@ -73,35 +73,24 @@ export class DirectResultComponent implements OnInit {
     }
 
     downloadDirect() {
-        const elementToPrint = document.getElementById('direct');
-        let l = {
-            orientation: 'p',
-            unit: 'mm',
-            format: 'a3',
-            compress: true,
-            fontSize: 8,
-            lineHeight: 1,
-            autoSize: false,
-            printHeaders: true
-        };
+        const elementToPrint = document.getElementById('pdf-direct');
+        // let l = {
+        //     orientation: 'p',
+        //     unit: 'mm',
+        //     format: 'a3',
+        //     compress: true,
+        //     fontSize: 8,
+        //     lineHeight: 1,
+        //     autoSize: false,
+        //     printHeaders: true
+        // };
 
-        const pdf = new jsPdf(l, 'pt', 'a4');
-        let pageHeight= pdf.internal.pageSize.height;
+        const pdf = new jsPdf('p', 'pt', 'a4');
 
-       // let y = 500 // Height position of new content
-       //  if (y >= pageHeight)
-       //  {
-       //      pdf.addPage();
-       //      y = 0 // Restart height position
-       //  }
+
+
         pdf.addHTML(elementToPrint, () => {
             pdf.save('direct.pdf');
         });
-
-        // var doc = new jsPdf('p', 'pt');
-        // var elem = document.getElementById("basic-table");
-        // var res = doc.autoTableHtmlToJson(elem);
-        // doc.autoTable(res.columns, res.data);
-        // doc.save("table.pdf");
     }
 }

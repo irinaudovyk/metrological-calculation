@@ -1,36 +1,40 @@
 <div class="row">
   <div class="col-md-12">
-    <div class="table-responsive" id="pdf-reverse" style="background-color: white">
+    <div class="table-responsive" id="pdf-direct" style="background-color: white">
       <table class="table table-condensed table-striped table-bordered table-hover no-margin">
         <thead>
         <tr>
-          <th rowspan="4" style="width: 10%;vertical-align: middle;text-align: center;">Виміряне значення швидкості, Xcp, км/год</th>
+          <th rowspan="4" style="width: 10%;vertical-align: middle;text-align: center;">Виміряне значення швидкості,
+            Xcp, км/год
+          </th>
           <th colspan="11">Зворотній хід</th>
         </tr>
         <tr>
-          <th rowspan="2" colspan="2" style="vertical-align: middle;text-align: center;">Покази спідометра, Xpoб, км/год</th>
+          <th rowspan="2" colspan="2" style="vertical-align: middle;text-align: center;">Покази спідометра, Xpoб,
+            км/год
+          </th>
           <th rowspan="2" style="vertical-align: middle;text-align: center;">Суреднє значення, км/год</th>
           <th rowspan="2" style="vertical-align: middle;text-align: center;">СКВ, км/год</th>
           <th rowspan="2" style="vertical-align: middle;text-align: center;">Межі випадкової похибки, км/год</th>
-          <th colspan="2" >Абсолютна похибка, км/год</th>
+          <th colspan="2">Абсолютна похибка, км/год</th>
           <th colspan="2">Відносна похибка, %</th>
           <th colspan="2">Зведена похибка, %</th>
         </tr>
         <tr>
           <th colspan="2">
-            <img src="/assets/image/delta.png" style="width: 150px; height: auto;" >
+            <img src="/assets/image/delta.png" style="width: 150px; height: auto;">
           </th>
           <th colspan="2">
-            <img src="/assets/image/deltaRel.png" style="width: 160px; height: auto;" >
+            <img src="/assets/image/deltaRel.png" style="width: 160px; height: auto;">
           </th>
-          <th colspan="2"><img src="/assets/image/deltaRelSum.png" style="width: 160px; height: auto;" ></th>
+          <th colspan="2"><img src="/assets/image/deltaRelSum.png" style="width: 160px; height: auto;"></th>
         </tr>
         <tr>
           <th colspan="1">І</th>
           <th colspan="1">ІІ</th>
-          <th colspan="1"><img src="/assets/image/xcp.png" style="width: 90px; height: auto;" ></th>
-          <th colspan="1"><img src="/assets/image/sigma.png" style="width: 200px; height: auto;" ></th>
-          <th colspan="1"><img src="/assets/image/epsilon.png" style="width: 120px; height: auto;" ></th>
+          <th colspan="1"><img src="/assets/image/xcp.png" style="width: 90px; height: auto;"></th>
+          <th colspan="1"><img src="/assets/image/sigma.png" style="width: 200px; height: auto;"></th>
+          <th colspan="1"><img src="/assets/image/epsilon.png" style="width: 120px; height: auto;"></th>
           <th colspan="1">І</th>
           <th colspan="1">ІІ</th>
           <th colspan="1">І</th>
@@ -39,7 +43,7 @@
           <th colspan="1">ІІ</th>
         </tr>
         </thead>
-        <tbody >
+        <tbody>
         <tr *ngFor="let item of data">
           <td *ngIf="item.XCP2">
             <span class="name">{{item.point}}</span>
@@ -62,7 +66,7 @@
           <td *ngIf="item.XCP2">
             <span class="name">&#8723; {{item.deltaFirst2}}</span>
           </td>
-          <td *ngIf="item.XCP2" >
+          <td *ngIf="item.XCP2">
             <span class="name">&#8723; {{item.deltaSecond2}}</span>
           </td>
           <td *ngIf="item.XCP2">
@@ -81,7 +85,7 @@
         </tbody>
       </table>
     </div>
-    <button (click)="downloadReverse()" class="btn btn-success">Зберегти результати зворотнього ходу</button>
+    <button (click)="downloadDirect()" class="btn btn-success">Зберегти результати зворотнього ходу</button>
   </div>
 </div>
 

@@ -10,7 +10,6 @@ import {Router} from "@angular/router";
 })
 export class InputDataComponent implements OnInit {
 
-    title: string = 'Вхідні дані';
     dataPoints: number[] = [20, 40, 60, 80, 100, 120, 140, 160, 180, 200];
     data: InputData[] = [];
 
