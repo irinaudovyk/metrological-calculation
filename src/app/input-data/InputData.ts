@@ -1,9 +1,9 @@
 export class InputData {
     point: number;
-    directFirst: number = 21;
-    directSecond: number = 20;
-    reverseFirst: number = 22;
-    reverseSecond: number = 23;
+    directFirst: number = null;
+    directSecond: number = null;
+    reverseFirst: number = null;
+    reverseSecond: number = null;
     XCP:number;
     sigma:number;
     epsilon:number;
